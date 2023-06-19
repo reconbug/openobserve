@@ -731,7 +731,7 @@ export default defineComponent({
               font: { size: 12 },
               autosize: true,
               legend: {
-                  bgcolor: "#f7f7f7",
+                  bgcolor: "#0000000b",
                   itemclick: ['pie', 'donut'].includes(props.data.type) ? 'toggle' : false,
               },
               margin: {
@@ -741,6 +741,7 @@ export default defineComponent({
                   b: 32,
               },
               ...getPropsByChartTypeForLayout(),
+              ...getThemeLayoutOptions()
           };
 
           console.log('layout', layout);
@@ -1204,6 +1205,15 @@ export default defineComponent({
                   };
           }
       };
+
+    const getThemeLayoutOptions = () => ({
+        paper_bgcolor: store.state.theme === 'dark' ? '#333' : '#fff',
+        plot_bgcolor: store.state.theme === 'dark' ? '#333' : '#fff',
+    })
+
+    watch(() => store.state.theme, () => {
+        Plotly.update(plotRef.value, {}, getThemeLayoutOptions())
+    })
 
       return {
           chartPanelRef,
