@@ -775,7 +775,7 @@ export default defineComponent({
                     font: { size: 12 },
                     autosize: true,
                     legend: {
-                        bgcolor: "#f7f7f7",
+                        // bgcolor: "#f7f7f7",
                         orientation: "h",
                         itemclick: false,
                     },
@@ -814,7 +814,7 @@ export default defineComponent({
                     font: { size: 12 },
                     autosize: true,
                     legend: {
-                        bgcolor: "#f7f7f7",
+                        // bgcolor: "#f7f7f7",
                         orientation: "h",
                         itemclick: false
                     },
